@@ -5,6 +5,7 @@ import { apiCall } from '../api';
 export function* searchMovie({ payload }) {
     console.log("payload: ", payload);
     try {
+        console.log("payload: ", payload);
         const results = yield call(apiCall, `&s=${payload.search}`, null, null, 'GET');
         yield put({ type: SEARCH_MOVIE_COMPLETE, results });
     } catch (error) {

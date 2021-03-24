@@ -5,7 +5,6 @@ import {SEARCH_MOVIE_START, SEARCH_MOVIE_ERROR, SEARCH_MOVIE_COMPLETE } from '..
 const initialState = {};
 
 export default function(state = initialState, action){
-    console.log(action);
     switch (action.type){
         case SEARCH_MOVIE_START:
             return { ...state, isLoading: true, movies: null };
