@@ -25,15 +25,11 @@ const Home = () => {
     const { search } = formValues;
 
     useEffect(() => {
-        if (search && !movies) {
-           console.log(search); 
-          dispatch(searchMovie({ search }));
-        }
-    }, search);
+ 
+    }, [search]);
 
     const handlerSubmit = (e) => {
         e.preventDefault();
-        console.log(formValues);
         dispatch(searchMovie({ search }));
     }
 
@@ -49,7 +45,9 @@ const Home = () => {
        
         handlerInputChange(event);
        
-        console.log("limpiar");
+        if (search && !movies) {
+            dispatch(searchMovie({ search }));
+        }
     }
 
     return (
